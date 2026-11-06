@@ -57,15 +57,18 @@
 
       <!-- Candles stand on the top layer (y 0.45 to 0.59), each with a flame above it -->
       <a-cylinder position="-0.1 0.52 0" radius="0.02" height="0.14" color="#4CC3D9"></a-cylinder>
-      <a-cone position="-0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"></a-cone>
+      <a-cone position="-0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"
+        animation="property: scale; from: 1 1 1; to: 1.2 1.3 1.2; dir: alternate; dur: 400; easing: easeInOutSine; loop: true"></a-cone>
       <a-cylinder position="0 0.52 0" radius="0.02" height="0.14" color="#7BC8A4"></a-cylinder>
-      <a-cone position="0 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FFC107"></a-cone>
+      <a-cone position="0 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FFC107"
+        animation="property: scale; from: 1 1 1; to: 1.2 1.3 1.2; dir: alternate; dur: 350; easing: easeInOutSine; loop: true"></a-cone>
       <a-cylinder position="0.1 0.52 0" radius="0.02" height="0.14" color="#9B59B6"></a-cylinder>
-      <a-cone position="0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"></a-cone>
+      <a-cone position="0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"
+        animation="property: scale; from: 1 1 1; to: 1.2 1.3 1.2; dir: alternate; dur: 450; easing: easeInOutSine; loop: true"></a-cone>
 
       <!-- Balloon, with its string as a child so the two always move together -->
       <a-sphere id="balloon" class="clickable" color-changer position="0.6 0.75 0" radius="0.16" color="#EF2D5E"
-        animation="property: position; from: 0.6 0.4 0; to: 0.6 0.8 0; dir: alternate; dur: 700; easing: easeInOutQuad; loop: true">
+        animation="property: position; from: 0.6 0.75 0; to: 0.6 0.95 0; dir: alternate; dur: 900; easing: easeInOutQuad; loop: true">
         <a-cylinder position="0 -0.36 0" radius="0.006" height="0.4" color="#ECEFF1"></a-cylinder>
       </a-sphere>
 
