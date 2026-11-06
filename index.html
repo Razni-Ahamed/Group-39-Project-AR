@@ -44,12 +44,38 @@
       <a-asset-item id="duck-model" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Binary/Duck.glb"></a-asset-item>
     </a-assets>
     <a-marker preset="hiro" marker-status>
-      <a-plane rotation="-90 0 0" width="1.6" height="1.6" color="#2C3E50"></a-plane>
-      <a-entity gltf-model="#duck-model" position="0 0 0" scale="0.4 0.4 0.4"
+      <!-- Floor -->
+      <a-plane rotation="-90 0 0" width="1.6" height="1.6" color="#4A148C"></a-plane>
+
+      <!-- Temporary model, moved behind the cake -->
+      <a-entity gltf-model="#duck-model" position="0.45 0 -0.55" scale="0.2 0.2 0.2"
         animation="property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true"></a-entity>
-      <a-sphere class="clickable" color-changer position="0.6 0.5 0" radius="0.2" color="#EF2D5E"
-        animation="property: position; from: 0.6 0.4 0; to: 0.6 0.8 0; dir: alternate; dur: 700; easing: easeInOutQuad; loop: true"></a-sphere>
-      <a-text value="Hello AR!" position="0 1.4 0" align="center" width="3" color="#FFFFFF"></a-text>
+
+      <!-- Cake: two stacked layers. Bottom spans y 0 to 0.25, top spans y 0.25 to 0.45 -->
+      <a-cylinder position="0 0.125 0" radius="0.35" height="0.25" color="#F48FB1"></a-cylinder>
+      <a-cylinder position="0 0.35 0" radius="0.23" height="0.2" color="#FFF3E0"></a-cylinder>
+
+      <!-- Candles stand on the top layer (y 0.45 to 0.59), each with a flame above it -->
+      <a-cylinder position="-0.1 0.52 0" radius="0.02" height="0.14" color="#4CC3D9"></a-cylinder>
+      <a-cone position="-0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"></a-cone>
+      <a-cylinder position="0 0.52 0" radius="0.02" height="0.14" color="#7BC8A4"></a-cylinder>
+      <a-cone position="0 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FFC107"></a-cone>
+      <a-cylinder position="0.1 0.52 0" radius="0.02" height="0.14" color="#9B59B6"></a-cylinder>
+      <a-cone position="0.1 0.625 0" radius-bottom="0.03" radius-top="0" height="0.07" color="#FF9800"></a-cone>
+
+      <!-- Balloon, with its string as a child so the two always move together -->
+      <a-sphere id="balloon" class="clickable" color-changer position="0.6 0.75 0" radius="0.16" color="#EF2D5E"
+        animation="property: position; from: 0.6 0.4 0; to: 0.6 0.8 0; dir: alternate; dur: 700; easing: easeInOutQuad; loop: true">
+        <a-cylinder position="0 -0.36 0" radius="0.006" height="0.4" color="#ECEFF1"></a-cylinder>
+      </a-sphere>
+
+      <!-- Gift: a box with a contrasting ribbon wrapped over it -->
+      <a-box id="gift" class="clickable" position="-0.6 0.15 0" width="0.3" height="0.3" depth="0.3" color="#1976D2"></a-box>
+      <a-box position="-0.6 0.155 0" width="0.06" height="0.31" depth="0.31" color="#FFEB3B"></a-box>
+
+      <!-- Label, on a dark backing so it stays readable over any camera background -->
+      <a-text value="Happy Birthday Apsara!" position="0 1.3 0" align="center" width="3" color="#FFFFFF"
+        geometry="primitive: plane; width: 1.8; height: 0.22" material="color: #311B92"></a-text>
     </a-marker>
     <a-entity camera cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
   </a-scene>
