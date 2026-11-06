@@ -38,6 +38,6 @@ An augmented reality birthday card for Apsara, made with A-Frame and AR.js. Poin
 
 ## Live Demo
 
-The link will be added once GitHub Pages is enabled.
+https://razni-ahamed.github.io/Apsara-group-project-AR/
 
 **Tested on:** [DEVICES]
